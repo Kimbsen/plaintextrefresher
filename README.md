@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", plaintextrefresher.Handle("http://localhost:8080/stats"))
+	http.HandleFunc("/", plaintextrefresher.Handle("/stats"))
 	count := 0
 	http.HandleFunc("/stats", func(rw http.ResponseWriter, req *http.Request) {
 		rw.Header().Set("Content-Type", "text/html")
